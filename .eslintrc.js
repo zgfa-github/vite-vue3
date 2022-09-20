@@ -21,5 +21,7 @@ module.exports = {
 
     rules: {
         // override/add rules settings here, such as:
+        // 关闭驼峰命名规则
+        'vue/multi-word-component-names': 0,
     },
 };
