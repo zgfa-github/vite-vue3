@@ -1,8 +1,2 @@
 npm init vue@latest
 
-"lint-staged": {
-    "*.{js,ts}": [
-      "pnpm run eslint",
-      "pnpm run prettier"
-    ]
-  }

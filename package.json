@@ -51,6 +51,11 @@
   },
   "cz-customizable": {
     "config": "cz-config.js"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "pnpm run eslint",
+      "pnpm run prettier"
+    ]
   }
-  
 }
