@@ -7,5 +7,11 @@ prepare脚本会在npm install（不带参数）之后自动执行。
 npm run commit 代替 git commit -m '注释'
 
 https://juejin.cn/post/6886072051942211597
+
+该项目现在是这样执行步骤
+git add .
+npm run commit   这一步取代git commit -m '注释' 就是检测
+git push origin master
+
 加油
 
