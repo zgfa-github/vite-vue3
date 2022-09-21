@@ -57,7 +57,7 @@ services.interceptors.response.use(
             showMessage(response.status);
             return Promise.reject(response.data);
         } else {
-            ElMessage.warning('网络异常，请稍后再试');
+            ElMessage.warning('网络异常，请稍后再试!');
         }
     },
 );
