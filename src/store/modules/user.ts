@@ -12,6 +12,9 @@ const useUserStore = defineStore({
         updated(name: string) {
             this.name = name;
         },
+        setToke(token: string) {
+            //localStorage.setItem(token, token);
+        },
     },
 });
 

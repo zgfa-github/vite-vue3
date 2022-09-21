@@ -2,7 +2,6 @@
   "name": "vite-vue3",
   "private": true,
   "version": "0.0.0",
-
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -12,7 +11,8 @@
     "commit:comment": "引导设置规范化的提交信息",
     "commit": "git-cz",
     "prepare": "husky install",
-    "test": "npm run lint -- --fix"
+    "test": "npm run lint -- --fix",
+    "mock": "npm run dev:mock"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -37,9 +37,12 @@
     "eslint-plugin-vue": "^9.5.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "mockjs": "^1.1.0",
+    "path": "^0.12.7",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
+    "vite-plugin-mock": "^2.9.6",
     "vue-tsc": "^0.40.4"
   },
   "config": {
@@ -56,6 +59,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": ["pnpm run lint:eslint", "pnpm run lint:prettier"]
+    "*.{js,jsx,vue,ts,tsx}": [
+      "pnpm run lint:eslint",
+      "pnpm run lint:prettier"
+    ]
   }
 }

@@ -37,5 +37,7 @@ export const showMessage = (status: number | string): string => {
         default:
             message = `连接出错(${status})!`;
     }
+    console.log(message);
+
     return `${message},请检查网络和联系管理员`;
 };

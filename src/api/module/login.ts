@@ -5,9 +5,9 @@ import request from '../axios';
  * @params {ILogin} params
  * @return {Promise}
  */
-export const login = (params: ILogin): Promise<IResponse> => {
+export const login = (params: ILogin) => {
     return request({
-        url: '/login',
+        url: '/mock/api/login',
         method: 'post',
         data: params,
     });

@@ -5,9 +5,9 @@ import { ElMessage } from 'element-plus';
 const useStore = useUserStore();
 const services: AxiosInstance = axios.create({
     // baseURL: process.env.VUE_APP_BASE_URL + "/api/v1/",
-    baseURL:
-        'https://www.fastmock.site/mock/0b0717702f54cb0f743c3138d6ab6ed6/api',
-    timeout: 1000,
+    //https://www.fastmock.site/mock/0b0717702f54cb0f743c3138d6ab6ed6/api
+    baseURL: '',
+    timeout: 8000,
     headers: {
         Accept: 'application/json',
     },
@@ -15,11 +15,15 @@ const services: AxiosInstance = axios.create({
 // axios实例拦截请求
 services.interceptors.request.use(
     (config: AxiosRequestConfig) => {
-        const token = useStore.token;
+        // const token = useStore.token;
+        // console.log(useStore.token);
+        const token = localStorage.getItem('token');
         if (token) {
             //判断是否有headers
+            console.log('能否获得token');
+
             if (config && config?.headers) {
-                config.headers.Authorization = `${token}`;
+                config.headers.authorization = `${token}`;
             }
         }
         return config;
@@ -31,15 +35,15 @@ services.interceptors.request.use(
 // axios实例拦截响应
 services.interceptors.response.use(
     (response: AxiosResponse) => {
-        if (response.headers.Authorization) {
-            localStorage.setItem('token', response.headers.Authorization);
-        } else {
-            if (response.data && response.data.token) {
-                localStorage.setItem('token', response.data.token);
-            }
-        }
+        // if (response.headers.authorization) {
+        //     localStorage.setItem('token', response.headers.authorization);
+        // } else {
+        //     if (response.data && response.data.token) {
+        //         localStorage.setItem('token', response.data.token);
+        //     }
+        // }
         if (response.status === 200) {
-            console.log('响应成功');
+            console.log('拦截响应成功');
             console.log(response);
 
             return response;
