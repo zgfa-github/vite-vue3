@@ -50,6 +50,11 @@
   "cz-customizable": {
     "config": "cz-config.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": ["pnpm run lint:eslint", "pnpm run lint:prettier"]
   }
