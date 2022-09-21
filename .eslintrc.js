@@ -23,5 +23,6 @@ module.exports = {
         // override/add rules settings here, such as:
         // 关闭驼峰命名规则
         'vue/multi-word-component-names': 0,
+        '@typescript-eslint/ban-types': 'error',
     },
 };
