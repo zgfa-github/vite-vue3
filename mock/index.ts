@@ -1,7 +1,7 @@
 import { MockMethod } from 'vite-plugin-mock';
 
 const arr: any = [];
-for (let index = 0; index < 20; index++) {
+for (let index = 0; index < 50; index++) {
     arr.push({
         id: index,
         customer_name: 'zgf',
@@ -9,10 +9,11 @@ for (let index = 0; index < 20; index++) {
         os: 'window 10',
         browser: 'Chrome',
         ip: '192.168.1.101',
+        desc: '快乐学习模式',
     });
 }
 const logList = {
-    total: 31,
+    total: 51,
     page: 1,
     pageSize: 20,
     list: arr,

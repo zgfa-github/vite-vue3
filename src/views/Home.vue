@@ -1,8 +1,8 @@
 <template>
     <div>
-        <ul>
+        <ul class="list">
             <li v-for="list in ListArr.arr" :key="list.id">
-                {{ list.ip }}
+                {{ list.desc }}
             </li>
         </ul>
     </div>
