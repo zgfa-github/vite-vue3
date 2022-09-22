@@ -2,6 +2,7 @@
 <template>
     <div>
         <h1>test</h1>
+        <div @click="logout">退出</div>
         <div>{{ useStore.name }}</div>
         <div @click="handleLogin">登录</div>
         <div @click="getUser">获取用户</div>
@@ -25,7 +26,8 @@ const handleLogin = async () => {
     console.log(res);
     if (res) {
         useStore.token = res.data.result.token;
-        localStorage.setItem('token', useStore.token);
+        //localStorage.setItem('token', useStore.token);
+        useStore.setToken(useStore.token);
     }
 };
 const getUser = async () => {
@@ -33,6 +35,12 @@ const getUser = async () => {
     console.log('前端终端获取用户的数据成功');
     console.log(result);
     src.value = result.data.result.avatar;
+};
+
+const logout = async () => {
+    let result = await API.logout();
+    console.log(result);
+    useStore.delToken();
 };
 </script>
 

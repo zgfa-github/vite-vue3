@@ -73,6 +73,7 @@ export default [
             });
         },
     },
+    //获取用户信息
     {
         url: '/mock/api/getUserInfo',
         method: 'get',
@@ -88,6 +89,25 @@ export default [
                 );
             }
             return resultSuccess(checkUser);
+        },
+    },
+    {
+        url: '/mock/api/logout',
+        method: 'get',
+        response: (request: requestParams) => {
+            console.log(request);
+
+            const token = getRequestToken(request);
+            if (!token) return resultError('Invalid token');
+            const checkUser = createUserList().find(
+                (item) => item.token === token,
+            );
+            console.log(checkUser);
+
+            if (!checkUser) {
+                return resultError('Invalid token');
+            }
+            return resultSuccess(undefined, { message: '用户退出成功' });
         },
     },
 ] as MockMethod[];

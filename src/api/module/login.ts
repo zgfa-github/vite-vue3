@@ -12,3 +12,10 @@ export const login = (params: ILogin) => {
         data: params,
     });
 };
+
+export const logout = () => {
+    return request({
+        url: '/mock/api/logout',
+        method: 'get',
+    });
+};
