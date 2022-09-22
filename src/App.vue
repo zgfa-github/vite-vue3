@@ -3,24 +3,9 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Layout from './layout/index.vue';
 import { ref } from 'vue';
+import { bounce } from './utils/index';
 const isFix = ref(false);
-type Fn = () => void;
-type timer = null | undefined | number;
-const bounce = (delay: number, fn: Fn) => {
-    let timer: timer = null;
-    return function () {
-        if (timer) {
-            console.log(1);
 
-            return false;
-        }
-        timer = setTimeout(function () {
-            console.log(this);
-
-            fn.apply(this);
-        }, delay);
-    };
-};
 // document.addEventListener('scroll', function () {
 //     // console.log(window);
 

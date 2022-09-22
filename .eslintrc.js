@@ -24,5 +24,13 @@ module.exports = {
         // 关闭驼峰命名规则
         'vue/multi-word-component-names': 0,
         '@typescript-eslint/ban-types': 'error',
+        //9-22新增的，为了解决this赋值给变量的报错，因为是在ts环境中的
+        '@typescript-eslint/no-this-alias': [
+            'error',
+            {
+                allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+                allowedNames: ['self'], // Allow `const self = this`; `[]` by default
+            },
+        ],
     },
 };

@@ -21,7 +21,7 @@ const useStore = useUserStore();
 // useStore.updated('hhhh')
 const src = ref('');
 const handleLogin = async () => {
-    let res = await API.login({ username: 'vben', password: '123456' });
+    let res = await API.login({ username: 'test', password: '123456' });
     console.log('前端终端获取数据成功');
     console.log(res);
     if (res) {
