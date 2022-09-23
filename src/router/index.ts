@@ -18,6 +18,12 @@ const routes: RouteRecordRaw[] = [
                 children: [],
             },
             {
+                path: 'slot',
+                name: 'Slot',
+                component: () => import('../views/Slot.vue'),
+                children: [],
+            },
+            {
                 path: 'test/test1',
                 name: 'Test1',
                 component: () => import('../views/Test1.vue'),

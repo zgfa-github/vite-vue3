@@ -24,6 +24,7 @@ document.addEventListener(
     <div class="menu" :class="{ topFixed: isFix }">
         <router-link to="/index">Home</router-link>
         <router-link to="/test">test</router-link>
+        <router-link to="/slot">slot</router-link>
     </div>
     <div class="layout-container">
         <Layout class="main" />
@@ -40,7 +41,7 @@ document.addEventListener(
 .menu {
     background: #5b5a5a;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
 }
 .menu a {
     color: #fff;
