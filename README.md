@@ -4,6 +4,7 @@
 
 - 是vue2的升级版，源码用ts重构，解决vue2在很多场景的不足之处，优化挺多
 - 写法上有不同，采用组合式API方式，业务逻辑抽离单独文件，不再像选项式臃肿冗余，统一方便管理维护
+
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Vite是什么？
@@ -16,9 +17,17 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## TypeScript是什么？
 
+- 是js超集，静态编译为js再执行，编译过程中有错就提示，类似后端语言写法，规范约束性很好
+
 ## vue-router是什么？
 
+- 这里所说的路由是指4.0版本以上的，和之前版本写法有所区别
+
 ## pinia是什么？
+
+- 是状态管理器，相对于vuex，进一步优化不少
+
+- 写法上也不一样
 
 ## husky是什么？
 
@@ -29,7 +38,9 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## vite-plugin-mock   模拟后端返回数据
 
-- 解决了什么？
+- 解决了什么？可以模仿后端返回数据，解决了前端前期开发无数据的局面
+
+- 先模拟后期再和后端接口联调测试
 
 ## Recommended IDE Setup
 
