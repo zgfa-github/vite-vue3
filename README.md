@@ -3,7 +3,10 @@
 ## vue3是什么？
 
 - 是vue2的升级版，源码用ts重构，解决vue2在很多场景的不足之处，优化挺多
-- 写法上有不同，采用组合式API方式，业务逻辑抽离单独文件，不再像选项式臃肿冗余，统一方便管理维护
+
+- 写法上有不同，采用组合式API方式，业务逻辑可以单独抽离为一个模块，不再像选项式臃肿冗余，统一方便管理维护
+
+- 数据响应式改进，采用了proxy模式
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
@@ -25,22 +28,27 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## pinia是什么？
 
-- 是状态管理器，相对于vuex，进一步优化不少
+- 是新的状态管理器方式，相对于vuex，进一步优化不少
 
-- 写法上也不一样
+- 写法上和vuex 感觉大同小异
 
 ## husky是什么？
+
+- 是为了更好把控代码质量，上线之前检查发现问题，避免上线后带来的bug后果
+
+- 省去 git commit -m '注释'这一步， 通过在package.json文件中配置选项,执行npm run commit
 
 ## CI/CD是什么？
 
 - CI是持续集成
 - CD是持续部署
+- 两者的目的：简化了很多手动重复性工作，让代码自动化完成手动的操作步骤，即是自动部署过程
 
 ## vite-plugin-mock   模拟后端返回数据
 
-- 解决了什么？可以模仿后端返回数据，解决了前端前期开发无数据的局面
+- 解决了什么？可以模仿后端接口返回数据，解决了前端前期开发无数据的等待局面，只需前期和后端商量好接口字段就好
 
-- 先模拟后期再和后端接口联调测试
+- 先模拟，后期再和后端接口联调测试，这样达到效率更高
 
 ## Recommended IDE Setup
 
@@ -55,4 +63,4 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
 
-## vite-plugin-mock   模拟后端返回数据
+
