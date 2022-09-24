@@ -24,6 +24,12 @@ const routes: RouteRecordRaw[] = [
                 children: [],
             },
             {
+                path: 'cart',
+                name: 'Cart',
+                component: () => import('../views/Cart.vue'),
+                children: [],
+            },
+            {
                 path: 'test/test1',
                 name: 'Test1',
                 component: () => import('../views/Test1.vue'),

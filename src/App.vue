@@ -25,6 +25,7 @@ document.addEventListener(
         <router-link to="/index">Home</router-link>
         <router-link to="/test">test</router-link>
         <router-link to="/slot">slot</router-link>
+        <router-link to="/cart">cart</router-link>
     </div>
     <div class="layout-container">
         <Layout class="main" />
