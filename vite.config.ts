@@ -1,5 +1,6 @@
 import { defineConfig, ConfigEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
+// import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { viteMockServe } from 'vite-plugin-mock';
 import path from 'path';
 // https://vitejs.dev/config/
@@ -7,7 +8,11 @@ export default defineConfig(({ command }: ConfigEnv) => {
     return {
         base: './',
         plugins: [
-            vue(),
+            vue({
+                // 设置属性为 响应式的
+                reactivityTransform: true,
+            }),
+            // vueSetupExtend(),
             //mock
             viteMockServe({
                 mockPath: 'mock', //mock文件地址
@@ -27,7 +32,26 @@ export default defineConfig(({ command }: ConfigEnv) => {
             ],
         },
         css: {
-            preprocessorOptions: {},
+            preprocessorOptions: {
+                // less: {
+                //     additionalData: `
+                //       @import "@/assets/styles/variables.less";
+                //       @import "@/assets/styles/mixins.less";
+                //       @import "@/assets/styles/theme.less";
+                //     `,
+                // },
+                // less: {
+                //     javascriptEnabled: true
+                //   }
+                less: {
+                    javascriptEnabled: true,
+                    modifyVars: {
+                        hack: `true; @import (reference) "${path.resolve(
+                            'src/assets/styles/variables.less',
+                        )}";`,
+                    },
+                },
+            },
         },
         build: {
             terserOptions: {
@@ -38,5 +62,11 @@ export default defineConfig(({ command }: ConfigEnv) => {
         },
         outDir: 'dist', //指定输出路径
         assetsDir: 'assets', //指定生成静态资源的存放路径
+        server: {
+            host: '',
+            port: 8088,
+            open: true,
+            cors: true, //允许开发时ajax跨域
+        },
     };
 });

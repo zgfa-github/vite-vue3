@@ -1,3 +1,21 @@
+<template>
+    <div class="menu" :class="{ topFixed: isFix }">
+        <div>
+            <router-link to="/index">Home</router-link>
+            <router-link to="/test">test</router-link>
+            <router-link to="/slot">slot</router-link>
+            <router-link to="/cart">cart</router-link>
+            <router-link to="/hello">helloworld</router-link>
+        </div>
+        <div>
+            <button @click="changeTheme('default')">默认主题</button>
+            <button @click="changeTheme('red')">红色主题</button>
+        </div>
+    </div>
+    <div class="layout-container">
+        <Layout class="main" />
+    </div>
+</template>
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
@@ -5,12 +23,16 @@ import Layout from './layout/index.vue';
 import { ref } from 'vue';
 import { bounce } from './utils/index';
 const isFix = ref(false);
-
-// document.addEventListener('scroll', function () {
-//     // console.log(window);
-
-// });
-
+const changeTheme = (theme: string) => {
+    switch (theme) {
+        case 'default':
+            document.documentElement.className = 'theme-default';
+            break;
+        case 'red':
+            document.documentElement.className = 'theme-red';
+            break;
+    }
+};
 document.addEventListener(
     'scroll',
     bounce(200, function () {
@@ -19,21 +41,7 @@ document.addEventListener(
     }),
 );
 </script>
-
-<template>
-    <div class="menu" :class="{ topFixed: isFix }">
-        <router-link to="/index">Home</router-link>
-        <router-link to="/test">test</router-link>
-        <router-link to="/slot">slot</router-link>
-        <router-link to="/cart">cart</router-link>
-        <router-link to="/hello">helloworld</router-link>
-    </div>
-    <div class="layout-container">
-        <Layout class="main" />
-    </div>
-</template>
-
-<style scoped>
+<style lang="less" scoped>
 .topFixed {
     width: 100%;
     position: fixed;
@@ -43,10 +51,10 @@ document.addEventListener(
 .menu {
     background: #5b5a5a;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 .menu a {
-    color: #fff;
+    color: @primary-color;
     margin-right: 20px;
 }
 .logo {
