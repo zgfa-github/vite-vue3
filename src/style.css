@@ -26,7 +26,8 @@ a:hover {
 
 body,
 ul,
-li {
+li,
+p {
     /* margin: 0;
   display: flex;
   place-items: center;

@@ -4,6 +4,11 @@
         <bottom-line></bottom-line>
         <ul class="cart-box">
             <li v-for="good in goodsList.arr" :key="good.id">
+                <input
+                    v-model="good.isChecked"
+                    type="checkbox"
+                    @change="select"
+                />
                 <p>{{ good.title }}</p>
                 <div>
                     <img :src="good.pic" alt="" />
@@ -25,7 +30,14 @@
                 </div>
             </li>
         </ul>
-        <div>总价：{{ goodsAllPrice }}元</div>
+        <div>
+            <input
+                id="check"
+                v-model="checked"
+                type="checkbox"
+                @change="changeHander(checked)"
+            /><label for="check">总价</label>：{{ totalPrice }}元
+        </div>
     </div>
 </template>
 
@@ -40,7 +52,15 @@ const goodId = ref(0);
 let goodsList = reactive({
     arr: [] as any[],
 });
-const { current: cur, inc, dec, goodsAllPrice } = useCart(goodsList);
+const {
+    current: cur,
+    checked,
+    inc,
+    dec,
+    totalPrice,
+    select,
+    changeHander,
+} = useCart(goodsList);
 
 onMounted(async () => {
     let res = await getCartList();
@@ -51,7 +71,7 @@ onMounted(async () => {
 
 <style scoped>
 .cart-box li {
-    padding: 10px 0;
+    padding: 15px 0 15px 20px;
     border-bottom: 6px solid rgb(239, 237, 237);
 }
 </style>
