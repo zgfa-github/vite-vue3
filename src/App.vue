@@ -26,6 +26,7 @@ document.addEventListener(
         <router-link to="/test">test</router-link>
         <router-link to="/slot">slot</router-link>
         <router-link to="/cart">cart</router-link>
+        <router-link to="/hello">helloworld</router-link>
     </div>
     <div class="layout-container">
         <Layout class="main" />
@@ -46,6 +47,7 @@ document.addEventListener(
 }
 .menu a {
     color: #fff;
+    margin-right: 20px;
 }
 .logo {
     height: 6em;

@@ -1,13 +1,43 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
-defineProps<{ msg: string }>();
-
+/**
+ * 想要设置默认值，通过 withDefaults 编译器宏
+ */
+// const props = defineProps<{
+//     msg: string;
+//     bar?: number;
+// }>();
+interface Props {
+    msg?: string;
+    labels?: string[];
+}
+const props = withDefaults(defineProps<Props>(), {
+    msg: '默认值helloworld',
+    labels: () => ['a', 'b'],
+});
+/**
+ * 非ts
+ */
+// const props = defineProps({
+//     msg: {
+//         type: String,
+//         default: () => '默认值1111',
+//     },
+// });
+const emit = defineEmits<{
+    (e: 'change', id: number): void;
+    (e: 'update', value: string): void;
+}>();
 const count = ref(0);
+const handleClick = () => {
+    console.log('子组件');
+    emit('change', 123456789);
+    emit('update', 'abc');
+};
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
+    <h1 @click="handleClick">{{ msg }}</h1>
 
     <div class="card">
         <button type="button" @click="count++">count is {{ count }}</button>

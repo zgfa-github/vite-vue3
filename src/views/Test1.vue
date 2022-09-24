@@ -18,6 +18,10 @@
                 type="text"
             />
         </div>
+        <bottom-line></bottom-line>
+        <h4>emit的使用实例</h4>
+        <!--父组件-->
+        <HelloWorld msg="我爱中华人民共和国" @change="change"></HelloWorld>
     </div>
 </template>
 
@@ -25,6 +29,7 @@
 import { reactive, computed } from 'vue';
 import { useCount } from '../utils/useCount';
 import BottomLine from '../components/line/BottomLine.vue';
+import HelloWorld from '../components/HelloWorld.vue';
 
 const {
     current: count,
@@ -57,6 +62,10 @@ let fullName = computed({
     },
 });
 fullName.value = '朱~官府';
+
+const change = (val: number) => {
+    console.log(`父组件${val}`);
+};
 </script>
 
 <style lang="" scoped></style>
