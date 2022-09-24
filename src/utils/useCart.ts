@@ -7,9 +7,19 @@ interface IGoods {
     num: number;
     isChecked: boolean;
 }
-export const useCart = (initiGoodsList) => {
+/**
+ *
+ * @param initiGoodsList
+ * @returns 属性和方法
+ */
+export const useCart = (initiGoodsList: { arr: any[] }) => {
     const current = ref(initiGoodsList);
     const checked = ref(false);
+    /**
+     *  加
+     * @param id
+     * @param gNums
+     */
     const inc = (id: number, gNums: number) => {
         console.log(initiGoodsList);
         initiGoodsList.arr.forEach((item: IGoods) => {
@@ -19,6 +29,11 @@ export const useCart = (initiGoodsList) => {
             }
         });
     };
+    /**
+     *  减
+     * @param id
+     * @param gNums
+     */
     const dec = (id: number, gNums: number) => {
         initiGoodsList.arr.forEach((item: IGoods) => {
             if (item.id === id) {
@@ -31,6 +46,9 @@ export const useCart = (initiGoodsList) => {
             }
         });
     };
+    /**
+     *  总价计算属性
+     */
     const totalPrice = computed(() => {
         let sum = 0;
         initiGoodsList.arr.forEach((item: IGoods) => {
@@ -40,6 +58,10 @@ export const useCart = (initiGoodsList) => {
         });
         return sum;
     });
+    /**
+     *  单选
+     * @returns
+     */
     const select = () => {
         let sum = 0;
 
@@ -58,6 +80,10 @@ export const useCart = (initiGoodsList) => {
 
         return sum;
     };
+    /**
+     *  全选
+     * @param iSelect
+     */
     const changeHander = (iSelect: boolean) => {
         console.log(iSelect);
 
