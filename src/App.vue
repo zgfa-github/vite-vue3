@@ -12,7 +12,7 @@
             <button @click="changeTheme('red')">红色主题</button>
         </div>
     </div>
-    <div class="layout-container">
+    <div ref="layoutDom" class="layout-container">
         <Layout class="main" />
     </div>
 </template>
@@ -23,13 +23,18 @@ import Layout from './layout/index.vue';
 import { ref } from 'vue';
 import { bounce } from './utils/index';
 const isFix = ref(false);
+const layoutDom = ref(null);
 const changeTheme = (theme: string) => {
     switch (theme) {
         case 'default':
             document.documentElement.className = 'theme-default';
+            layoutDom.value.className = 'layout-container';
             break;
         case 'red':
             document.documentElement.className = 'theme-red';
+            console.log(layoutDom);
+            layoutDom.value.className = 'layout-container active';
+
             break;
     }
 };
@@ -41,7 +46,7 @@ document.addEventListener(
     }),
 );
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .topFixed {
     width: 100%;
     position: fixed;
@@ -52,9 +57,9 @@ document.addEventListener(
     background: #5b5a5a;
     display: flex;
     justify-content: space-between;
+    color: #eee;
 }
 .menu a {
-    color: @primary-color;
     margin-right: 20px;
 }
 .logo {
@@ -67,5 +72,8 @@ document.addEventListener(
 }
 .logo.vue:hover {
     filter: drop-shadow(0 0 2em #42b883aa);
+}
+.layout-container {
+    background: @primary-color;
 }
 </style>
