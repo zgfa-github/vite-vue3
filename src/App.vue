@@ -23,17 +23,21 @@ import Layout from './layout/index.vue';
 import { ref } from 'vue';
 import { bounce } from './utils/index';
 const isFix = ref(false);
-const layoutDom = ref(null);
+const layoutDom = ref<any>(null);
 const changeTheme = (theme: string) => {
     switch (theme) {
         case 'default':
             document.documentElement.className = 'theme-default';
-            layoutDom.value.className = 'layout-container';
+            layoutDom.value
+                ? (layoutDom.value.className = 'layout-container')
+                : '';
             break;
         case 'red':
             document.documentElement.className = 'theme-red';
             console.log(layoutDom);
-            layoutDom.value.className = 'layout-container active';
+            layoutDom.value
+                ? (layoutDom.value.className = 'layout-container active')
+                : '';
 
             break;
     }

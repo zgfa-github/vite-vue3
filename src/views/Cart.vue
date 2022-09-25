@@ -42,13 +42,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, onMounted, reactive, computed, ref } from 'vue';
+import { onMounted, reactive } from 'vue';
 import BottomLine from '../components/line/BottomLine.vue';
 import { getCartList } from '../api/module/getCartList';
 import { useCart } from '../utils/useCart';
 
-const num = ref(0);
-const goodId = ref(0);
 let goodsList = reactive({
     arr: [] as any[],
 });
