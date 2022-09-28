@@ -39,6 +39,11 @@ const routes: RouteRecordRaw[] = [
                 name: 'HelloWorld',
                 component: () => import('../components/HelloWorld.vue'),
             },
+            {
+                path: 'less',
+                name: 'Less',
+                component: () => import('../views/Less.vue'),
+            },
         ],
     },
 ];

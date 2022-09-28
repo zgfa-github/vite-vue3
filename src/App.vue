@@ -6,6 +6,7 @@
             <router-link to="/slot">slot</router-link>
             <router-link to="/cart">cart</router-link>
             <router-link to="/hello">helloworld</router-link>
+            <router-link to="/less">less</router-link>
         </div>
         <div>
             <button @click="changeTheme('default')">默认主题</button>
@@ -67,9 +68,9 @@ document.addEventListener(
     margin-right: 20px;
 }
 .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
+    // height: 1em;
+    // padding: 1.5em;
+    // will-change: filter;
 }
 .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
