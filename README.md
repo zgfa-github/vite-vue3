@@ -17,6 +17,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - 比webpack更加轻量级，构建开发快的体验感，热更新hmr快
 
 - 打包思路也不同了
+- 先运行 npm run build 生成dist  然后在 npm run preview，就在本地产生一个服务器，dist静态文件在服务器上运行，可以预览效果
 
 ## TypeScript是什么？
 
