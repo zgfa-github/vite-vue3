@@ -50,6 +50,10 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 - 先模拟，后期再和后端接口联调测试，这样达到效率更高
 
+## 解决构建npm run build 报错问题：找不懂类型声明文件 estree
+- 安装 yarn add @typescript-eslint/typescript-estree -D
+- 很奇怪它就解决了，一脸懵逼
+
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
