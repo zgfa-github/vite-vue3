@@ -7,7 +7,7 @@ import request from '../axios';
  */
 export const login = (params: ILogin) => {
     return request({
-        url: '/mock/api/login',
+        url: '/login',
         method: 'post',
         data: params,
     });
@@ -15,7 +15,7 @@ export const login = (params: ILogin) => {
 
 export const logout = () => {
     return request({
-        url: '/mock/api/logout',
+        url: '/logout',
         method: 'get',
     });
 };

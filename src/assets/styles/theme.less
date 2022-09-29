@@ -3,49 +3,45 @@
 ) {
     --primary-color: @primary-color;
 }
-@primarycolor: #FF7F50;
-@color:#800080;
-h3{
-color: @primarycolor;
+@primarycolor: #ff7f50;
+@color: #800080;
+h3 {
+    color: @primarycolor;
 }
-h1{
-color: @color;
+h1 {
+    color: @color;
 }
 
 //针对Less.vue
 @width: 100%;
-@height:50px;
-@bg: #FF7F50;
-
+@height: 50px;
+@bg: #ff7f50;
 
 header {
-  width: @width;
-  height: @height;
-  background: @bg;
-  color:@color;
-  .logo {
-    width: 300px;
-  }
+    width: @width;
+    height: @height;
+    background: @bg;
+    color: @color;
+    .logo {
+        width: 300px;
+    }
 }
 
 @base: #f04615;
 @w: 0.5;
 
 .class {
-  width: percentage(@w); // returns `50%`
-  color: saturate(@base, 5%);
-  background-color: spin(lighten(@base, 25%), 8);
+    width: percentage(@w); // returns `50%`
+    color: saturate(@base, 5%);
+    background-color: spin(lighten(@base, 25%), 8);
 }
-
 
 #colors() {
     primary: blue;
     secondary: green;
-  }
-  
-  .button {
+}
+
+.button {
     color: #colors[primary];
     border: 1px solid #colors[secondary];
-  }
-
-
+}

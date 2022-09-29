@@ -2,7 +2,7 @@ import request from '../axios';
 
 export const getLogList = () => {
     return request({
-        url: '/mock/api/getList',
+        url: '/getList',
         method: 'post',
     });
 };

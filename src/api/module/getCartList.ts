@@ -1,7 +1,7 @@
 import request from '../axios';
 export const getCartList = () => {
     return request({
-        url: '/mock/api/getCartList',
+        url: '/getCartList',
         method: 'get',
     });
 };

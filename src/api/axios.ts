@@ -4,9 +4,12 @@ import { useUserStore } from '../store/modules/user';
 import { ElMessage } from 'element-plus';
 const useStore = useUserStore();
 const services: AxiosInstance = axios.create({
+    //这是vue-cli引入方式
     // baseURL: process.env.VUE_APP_BASE_URL + "/api/v1/",
     //https://www.fastmock.site/mock/0b0717702f54cb0f743c3138d6ab6ed6/api
-    baseURL: '',
+
+    //这是vite引入方式 import.meta.env.变量
+    baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 8000,
     headers: {
         Accept: 'application/json',
