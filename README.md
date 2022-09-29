@@ -54,6 +54,8 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - 安装 yarn add @typescript-eslint/typescript-estree -D
 - 很奇怪它就解决了，一脸懵逼
 
+## 奇怪问题
+- 有时候删除node_modules 重新安装又解决了很多问题
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
