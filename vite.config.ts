@@ -62,7 +62,7 @@ export default defineConfig(({ command }: ConfigEnv) => {
                 //     },
                 // },
             },
-            //添加这个报错，暂时不懂什么原因，还没解决
+
             postcss: {
                 plugins: [autoprefixer],
             },
@@ -73,13 +73,20 @@ export default defineConfig(({ command }: ConfigEnv) => {
                     drop_console: true,
                 },
             },
+            rollupOptions: {
+                output: {
+                    chunkFileNames: 'static/js/[name]-[hash].js',
+                    entryFileNames: 'static/js/[name]-[hash].js',
+                    assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+                },
+            },
         },
         outDir: 'dist', //指定输出路径
         assetsDir: 'assets', //指定生成静态资源的存放路径
         server: {
             host: '',
             port: 8088,
-            open: true,
+            open: false,
             cors: true, //允许开发时ajax跨域
         },
     };
