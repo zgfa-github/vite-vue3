@@ -10,7 +10,7 @@ const services: AxiosInstance = axios.create({
 
     //这是vite引入方式 import.meta.env.变量
     baseURL: import.meta.env.VITE_BASE_URL,
-    timeout: 8000,
+    timeout: 5000,
     headers: {
         Accept: 'application/json',
     },

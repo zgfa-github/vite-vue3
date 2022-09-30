@@ -3,6 +3,7 @@
 </template>
 <script lang="ts">
 let baseUrl;
+console.log('打印环境类型');
 console.log(import.meta.env.VITE_APP_ENV);
 
 if (import.meta.env.VITE_APP_ENV === 'developmentEnv') {

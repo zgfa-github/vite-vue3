@@ -57,6 +57,11 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 ## 奇怪问题
 - 有时候删除node_modules 重新安装又解决了很多问题
+
+## postcss的安装和配置
+- 安装 npm i postcss 
+- 再安装 npm i postcss-preset-env或者autoprefixer   都可以实现css前面加前缀
+- 需要在vite.config.js里面配置，不需要在根目录新建postcss.config.js文件，可能版本原因，没有深入研究，总之在vite.config.js配置就可以了
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)

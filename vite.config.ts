@@ -3,6 +3,10 @@ import vue from '@vitejs/plugin-vue';
 // import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { viteMockServe } from 'vite-plugin-mock';
 import path from 'path';
+import postcssImport from 'postcss-import';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
+import postcsspresetenv from 'postcss-preset-env';
 // https://vitejs.dev/config/
 export default defineConfig(({ command }: ConfigEnv) => {
     return {
@@ -57,6 +61,10 @@ export default defineConfig(({ command }: ConfigEnv) => {
                 //         )}";`,
                 //     },
                 // },
+            },
+            //添加这个报错，暂时不懂什么原因，还没解决
+            postcss: {
+                plugins: [autoprefixer],
             },
         },
         build: {

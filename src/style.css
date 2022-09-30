@@ -1,3 +1,4 @@
+/* :root是一个命名空间 ，可以设置变量参数，变量前面加 --, 然后用var获取变量值*/
 /* :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -17,7 +18,7 @@
 
 a {
     font-weight: 500;
-    color: #fafaff;
+    color: #222223;
     text-decoration: inherit;
 }
 a:hover {
