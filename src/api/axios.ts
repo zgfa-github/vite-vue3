@@ -26,6 +26,7 @@ services.interceptors.request.use(
             console.log('能否获得token');
 
             if (config && config?.headers) {
+                //为什么要加这个判断呢
                 config.headers.authorization = `${token}`;
             }
         }

@@ -7,6 +7,8 @@
             <router-link to="/cart">cart</router-link>
             <router-link to="/hello">helloworld</router-link>
             <router-link to="/less">less</router-link>
+            <router-link to="/a">aaa</router-link>
+            <router-link to="/b">bbb</router-link>
         </div>
         <div>
             <button @click="changeTheme('default')">默认主题</button>

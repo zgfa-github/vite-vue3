@@ -26,6 +26,8 @@ This template should help get you started developing with Vue 3 and TypeScript i
 ## vue-router是什么？
 
 - 这里所说的路由是指4.0版本以上的，和之前版本写法有所区别
+- 增加了路由的声明文件,更加的规范
+
 
 ## pinia是什么？
 
@@ -62,7 +64,16 @@ This template should help get you started developing with Vue 3 and TypeScript i
 - 安装 npm i postcss 
 - 再安装 npm i postcss-preset-env或者autoprefixer   都可以实现css前面加前缀
 - 需要在vite.config.js里面配置，不需要在根目录新建postcss.config.js文件，可能版本原因，没有深入研究，总之在vite.config.js配置就可以了
+
+### vue3+vite+ts+pinia+elplus那些不得不填的坑
+
+- 我在实践过程中的确也遇上这些问题，一模一样
+
+```
+转载自：https://juejin.cn/post/7135696241245028382
+```
 ## Recommended IDE Setup
+
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
