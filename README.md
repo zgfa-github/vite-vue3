@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite + vue-router + pinia + husky + mock
+# 技术栈：Vue3 + TypeScript + Vite + vue-router + pinia + husky + mock
 
 ## vue3是什么？
 
