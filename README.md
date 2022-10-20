@@ -53,7 +53,11 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 - 先模拟，后期再和后端接口联调测试，这样达到效率更高
 
-## 解决构建npm run build 报错问题：找不懂类型声明文件 estree
+## 也可以通过apiFox接口平台实现mock模拟数据
+
+- 就不需要在项目新建mock目录，直接在平台模拟，生成接口地址在项目中调用就可以了，这样统一管理接口
+
+## 解决构建npm run build 报错问题：找不到类型声明文件 estree
 - 安装 yarn add @typescript-eslint/typescript-estree -D
 - 很奇怪它就解决了，一脸懵逼
 
