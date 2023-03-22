@@ -78,6 +78,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 ```
 ## Recommended IDE Setup
 
+## 学习，加油，不忘初心，方得始终
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
